@@ -132,7 +132,7 @@ build_kernel() {
 	fi
 
 	cd "$KERNEL_DIR"
-	info "make GLANG_TRIPLE=aarch64-linux-gnu- ${args} ${KERNEL_CONFIG}"
+	info "make ${args} ${KERNEL_CONFIG}"
 	# shellcheck disable=SC2086
 	make -j"$(nproc --all)" CC=clang $args "${KERNEL_CONFIG}" \
 		|| die "defconfig generation failed"
